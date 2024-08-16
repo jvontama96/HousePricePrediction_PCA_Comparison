@@ -87,7 +87,7 @@
         </ul>
     </li>
     <li>Handling Outliers</li>
-    <li>Modeling: K-Means Clustering
+    <li>Modeling: K-Means Clustering: <a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/tree/main/Flight_Tuning_and_ClusterResult">GitHub Repository</a></li>
         <ul>
             <li>Cluster Tuning</li>
             <li>Cluster Visualization</li>
