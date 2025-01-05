@@ -11,8 +11,10 @@
 
 <p>This project aims to create a segmentation for customers in an airline company based on their spending and the frequency of their flights. The goal is to develop a more personalized approach, create effective marketing campaigns, and improve airline services.</p>
 
-<h2>Data</h2>
-<p>The dataset consists of 62,988 entries and 22 columns:</p>
+<h2><a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/tree/main/Flight_Dataset">Data Description</a></h2>
+<p>The dataset consists of 62,988 entries and 22 columns, which include:</p>
+
+<h3><strong>Categorical Features:</strong></h3>
 <ul>
     <li><strong>FFP_DATE</strong></li>
     <li><strong>FIRST_FLIGHT_DATE</strong></li>
@@ -21,24 +23,11 @@
     <li><strong>WORK_CITY</strong></li>
     <li><strong>WORK_PROVINCE</strong></li>
     <li><strong>WORK_COUNTRY</strong></li>
-    <li><strong>AGE</strong></li>
     <li><strong>LOAD_TIME</strong></li>
-    <li><strong>FLIGHT_COUNT</strong></li>
-    <li><strong>BP_SUM</strong></li>
-    <li><strong>SUM_YR_1</strong></li>
-    <li><strong>SUM_YR_2</strong></li>
-    <li><strong>SEG_KM_SUM</strong></li>
     <li><strong>LAST_FLIGHT_DATE</strong></li>
-    <li><strong>LAST_TO_END</strong></li>
-    <li><strong>AVG_INTERVAL</strong></li>
-    <li><strong>MAX_INTERVAL</strong></li>
-    <li><strong>EXCHANGE_COUNT</strong></li>
-    <li><strong>avg_discount</strong></li>
-    <li><strong>Points_Sum</strong></li>
-    <li><strong>Point_NotFlight</strong></li>
 </ul>
 
-<h3>Key Data Insights</h3>
+<h3><strong>Numerical Features and Statistical Insights:</strong></h3>
 <ul>
     <li><strong>AGE:</strong> The average customer age is 44.7 years, with most customers between 38 and 50 years old.</li>
     <li><strong>FLIGHT_COUNT:</strong> Customers have flown an average of 39.9 flights, with a wide range (3 to 213 flights).</li>
