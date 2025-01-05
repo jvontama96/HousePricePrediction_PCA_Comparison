@@ -10,8 +10,8 @@
 <h1>Customer Segmentation for Airlines using K-Means Clustering Models</h1>
 
 <p>This project aims to create a segmentation for customers in an airline company based on their spending and the frequency of their flights. The goal is to develop a more personalized approach, create effective marketing campaigns, and improve airline services.</p>
-
-<h2><a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/tree/main/Flight_Dataset">Data Description</a></h2>
+<a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/blob/main/Customer_Airlines_Clustering_KMeans_RFM.ipynb">Full Project Documentation</a></p>
+<h2>Data Understanding</h2>
 <p>The dataset consists of 62,988 entries and 22 columns, which include:</p>
 
 <h3><strong>Categorical Features:</strong></h3>
@@ -44,10 +44,9 @@
     <li><strong>Point_NotFlight:</strong> Non-flight points average 6.95, with a range of 0 to 140 points.</li>
 </ul>
 
-<h2>Notebook Contents</h2>
+<h2>Project Pipeline</h2>
 <ol>
-    <li>Data Processing</li>
-    <li>Exploratory Data Analysis (EDA)
+    <li> <a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/tree/main/Exploratory%20Data%20Analysis">Exploratory Data Analysis (EDA) (Click to access the directory)</a>
         <ul>
             <li>Summary Statistics for Numerical Variables</li>
             <li>Summary Statistics for Categorical and Date Variables</li>
@@ -75,17 +74,57 @@
             <li><strong>Monetary:</strong> <em>SUM_YR_1 and SUM_YR_2:</em> These represent the customer's spending in two different years. Combining these gives a good estimate of the total monetary value of each customer.</li>
         </ul>
     </li>
-    <li>Handling Outliers</li>
-    <li>Modeling: K-Means Clustering: <a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/tree/main/Flight_Tuning_and_ClusterResult">GitHub Repository</a></li>
+    <li>Handling Outliers of RFM Feature</li>
+    <li><a href="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/tree/main/Flight_Tuning_and_ClusterResult">Modeling K-Means Clustering:</a></li>
         <ul>
-            <li>Cluster Tuning</li>
-            <li>Cluster Visualization</li>
-            <li>Insight - Analysis Clustering</li>
+            <li>Cluster Tuning: Elbow and Silhouette Method</li>
+            <img src="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/blob/main/Flight_Tuning_and_ClusterResult/flight_tuning_elbow.png?raw=true" alt="elbow" style="width:50%; max-width:400px;">
+           <p> we observe that the suggested optimal k value is 6. However, we don't have a very distinct elbow point in this case, to choose the best k within this range, we can employ the silhouette analysis, another cluster quality evaluation method.</p>
+            <img src="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/blob/main/Flight_Tuning_and_ClusterResult/flight_tuning_silhouette.png?raw=true" alt="silhouette" style="width:50%; max-width:400px;">
+           <p>Based on above guidelines and after carefully considering the silhouette plots, it's clear that choosing ( k = 2) is the better option. This choice gives us clusters that are more evenly matched and well-defined, making our clustering solution stronger and more reliable.</p>
+            <li>Cluster Visualization and Distribution</li>
+            <img src="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/blob/main/Flight_Tuning_and_ClusterResult/flight_cluster_result.png?raw=true" alt="cluster" style="width:50%; max-width:400px;">
+             <img src="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/blob/main/Flight_Tuning_and_ClusterResult/flight_cluster_distribution.png?raw=true" alt="cluster" style="width:50%; max-width:400px;">
+            <table border="1">
+    <thead>
+        <tr>
+            <th>Cluster</th>
+            <th>R_mean</th>
+            <th>R_median</th>
+            <th>F_mean</th>
+            <th>F_median</th>
+            <th>M_mean</th>
+            <th>M_median</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0</td>
+            <td>1.432229</td>
+            <td>1.447158</td>
+            <td>1.283357</td>
+            <td>1.255273</td>
+            <td>4.202056</td>
+            <td>4.175323</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2.246072</td>
+            <td>2.322219</td>
+            <td>0.703111</td>
+            <td>0.698970</td>
+            <td>3.487693</td>
+            <td>3.506776</td>
+        </tr>
+    </tbody>
+</table>
+            <li>Cluster Analysis </li>
             <ul>
                 <li><strong>High-value Customers (Cluster 0):</strong> More engaged, fly more frequently, have flown more recently, and spend more, making them highly valuable to the airline.</li>
                 <li><strong>Low-value Customers (Cluster 1):</strong> Less engaged, fly less frequently, have not flown as recently, and spend less, making them less valuable compared to Cluster 0.</li>
             </ul>
-            <li><strong>Cluster Characteristics</strong>
+            <li><strong>Cluster Characteristics</strong></li>
+                <img src="https://github.com/jvontama96/AirlinesCustomerClustering_RFM_KMeans/blob/main/Flight_Tuning_and_ClusterResult/cluster_characteristic.png?raw=true" alt="cluster" style="width:50%; max-width:400px;">
                 <ul>
                     <li><strong>Cluster 0:</strong>
                         <ul>
@@ -106,6 +145,38 @@
         </ul>
     </li>
 </ol>
+<h2>Business Recommendations and Actions</h2>
 
+<h3>Cluster 0: High-Value Customers</h3>
+<ol>
+    <li>
+        <strong>Enhance Loyalty and Retention:</strong> 
+        Offer premium loyalty programs, such as tier upgrades, early boarding, or bonus miles, to reward their frequent engagement and encourage continued spending.
+    </li>
+    <li>
+        <strong>Personalized Offers:</strong> 
+        Provide personalized travel packages or exclusive promotions based on their preferences to further enhance their customer experience.
+    </li>
+    <li>
+        <strong>Upsell and Cross-Sell:</strong> 
+        Introduce value-added services, such as travel insurance, lounge access, or hotel partnerships, to maximize revenue from these high-value customers.
+    </li>
+</ol>
+
+<h3>Cluster 1: Low-Value Customers</h3>
+<ol>
+    <li>
+        <strong>Targeted Reactivation Campaigns:</strong> 
+        Send tailored promotions, such as discounted fares or loyalty program enrollment incentives, to encourage these customers to fly more frequently.
+    </li>
+    <li>
+        <strong>Engage Through Personalized Communication:</strong> 
+        Use data-driven insights to provide relevant travel suggestions, destination guides, or offers to re-engage them with the airline.
+    </li>
+    <li>
+        <strong>Improve Accessibility:</strong> 
+        Address potential barriers, such as cost or scheduling, by offering flexible booking options or affordable travel packages to boost their participation.
+    </li>
+</ol>
 </body>
 </html>
